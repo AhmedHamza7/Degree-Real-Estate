@@ -1,0 +1,86 @@
+
+@use '_vars' as *;
+
+.container {
+    width:80%;
+    margin: auto;
+    // make it responsive 
+    @media (max-width:992px){
+            width: 90% !important;
+    }
+    @media (max-width:768px){
+        width: 95% !important;
+}
+}
+.section-padding {
+    padding-block: 60px;
+/*==== make it responsive in mobile app ======*/
+    @media (max-width:768px){
+        padding-block: 30px;
+    }
+}
+.pointer {
+    cursor: pointer;
+}
+.text-white {
+    color:white;
+}
+// ===== page buttons style =====
+.button-style{
+    padding: 10px 45px;
+    background: $main-background;
+    color:white;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.4s all ease;
+    &:hover{
+        padding: 10px 60px;
+        background-color:transparent;
+        background: none;
+        border: 1px solid white;
+    }
+}
+//========= section title style =====
+.title {
+            text-align: center;
+            margin-block: 60px 100px;
+            font-size: 30px;
+            position: relative;
+                font-weight: 300;
+            &::before {
+                content: '';
+                display: inline-block;
+                width: 5rem;
+                height: 3px;
+                background-color: hsl(198, 60%, 50%);
+                margin: 0 25px 8px 0;
+              }
+              
+              &::after {
+                content: '';
+                display: inline-block;
+                width: 5rem;
+                height: 3px;
+                background-color: hsl(198, 60%, 50%);
+                margin: 0 0 8px 25px;
+              }
+
+
+            /* make title reponsive */
+            @media (max-width:768px){
+                font-size: 24px;
+                &::before {
+                    width: 4rem;
+                    height: 3px;
+                    background-color: hsl(198, 60%, 50%);
+                    margin: 0 25px 8px 0;
+                  }
+                  
+                  &::after {
+                    width: 4rem;
+                    height: 3px;
+                    margin: 0 0 8px 25px;
+                  }
+            }
+}

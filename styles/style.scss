@@ -1,0 +1,7 @@
+// ======== import other files =======
+@use 'scss-items/vars' as *;
+@use 'scss-items/mixins' as *;
+@use 'scss-items/classes' as *;
+
+// ======= IMPORT GLOBAL STYLES ======
+@include globalStyles;
