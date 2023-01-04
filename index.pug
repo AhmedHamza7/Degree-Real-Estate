@@ -4,8 +4,74 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title DEGREE
+        title DEGREE°
+        link(rel="stylesheet", href="styles/all.min.css")
         link(rel="stylesheet", href="styles/style.css")
     body 
-        .container 
-            p AHMED
+        //-====== NAV SECTION =======
+        nav 
+            .nav-contact(class='main-bg white-color py-2') 
+                .container(class='flex-between') 
+                    .contact-info(class='just-flex') 
+                        div(class='just-flex') 
+                            i(class="fa-solid fa-phone")
+                            p(class='mx-1') Need Support? 888-8X881-8X0
+                        div(class='just-flex mx-3') 
+                            i(class="fa-solid fa-envelope")
+                            p(class='mx-1') info@degree.com
+                    .nav-register(class='just-flex')
+                        div(class='just-flex mx-3') 
+                            i(class="fa-solid fa-right-to-bracket")
+                            p(class='mx-1') Login 
+                        div(class='just-flex') 
+                            i(class="fa-solid fa-user")
+                            p(class='mx-1') Register
+            .navbar-content(class='py-3') 
+                .container(class='flex-between')
+                    .nav-logo 
+                        h1 
+                            a DEGREE°
+                    .nav-list 
+                        ul(class='font-color') 
+                            each val in ['HOME', 'PROPERTIES','AGENTS','TESTIMONIALS','BLOG']
+                                li(class='mx-2')
+                                    a=val  
+                    .nav-button 
+                        button(class='button-style-outline') Submit Property
+        //-====== HEADER SECTION =======
+        header
+            .overlay(class='flex-center') 
+                .container(class='flex-center') 
+                    .header-content
+                        .header-text(class='white-color')
+                            h2 BEST PLACE TO FIND HOME
+                            p(class='my-5') Allow us to guide you through the innovative stress free approach in #[br] finding your dream Properties.
+                        .header-buttons
+                            button(class='button-style-solid') Get Started Now
+                            button(class='button-style-outline') Learn More
+        //-====== PROPERTIES SECTION =======
+        - var property = [{desc:'Big Head House', image:'images/property-1.jpg'},{desc:'Masons Villa', image:'images/property-2.jpg'},{desc:'Beautiful Single Home', image:'images/property-3.jpg'},{desc:'Park Avenue', image:'images/property-4.jpg'},{desc:'Luxury House', image:'images/property-5.jpg'},{desc:'Big Head House', image:'images/property-6.jpg'}]
+        section(class='properties section-padding')
+            .container 
+                .properties-title 
+                    h3(class='title') PROPERTIES
+                    .title-shape
+                        .shape1 
+                        .shape2
+                .properties-content
+                    each val in property
+                        .property-item
+                            .property-img 
+                                img(src=val.image)
+                            .property-info 
+                                h4=val.desc
+                                p(class='font-color') 
+                                    i(class="fa-solid fa-location-dot") 123 Kontar St. Texas
+                            .property-footer 
+                                p $1250
+                                .footer-icons 
+                                    i(class="fa-regular fa-heart")
+                                    i(class="fa-solid fa-share-nodes")
+
+
+        

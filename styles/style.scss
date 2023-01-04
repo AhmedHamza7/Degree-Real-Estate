@@ -5,3 +5,78 @@
 
 // ======= IMPORT GLOBAL STYLES ======
 @include globalStyles;
+
+
+//====== nav style =======
+nav{
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    .navbar-content{
+        box-shadow: 1px 0px 2px $main-color;
+        background-color: white;
+    }
+    li{
+        &:hover{
+            cursor: pointer;
+            color: $main-color;
+        }
+    }
+}
+
+header{
+    background-image: url('../images/home-bg.jpg');
+    @include backgroundOptions;
+    height: 100vh;
+
+    .overlay{
+        background-color: rgba(23, 23, 23, 0.3);
+        width: 100%;
+        height: 100%;
+
+        .container{
+            text-align: center;
+            .header-content {
+                margin-top: 10%;
+                .header-text{
+                    h2{
+                        font-size: 48px;
+                    }
+                    p{
+                        font-size: 24px;
+                        line-height: 1.3;
+                    }
+                }
+                .header-buttons{
+                    margin-top:50px;
+                    .button-style-outline{
+                        border:2px solid white !important;
+                        color: white !important;
+                        &:hover{
+                            border: 2px solid $main-color !important;
+                        }
+                    }
+                }
+}
+        }
+    }
+}
+
+.properties{
+    .properties-title{
+        margin-block: 100px
+    }
+    .properties-content{
+        @include flexible(center);
+        flex-wrap: wrap;
+        gap:2rem;
+        .property-item{
+            width: calc((100% / 3) - 2rem);
+            .property-img{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
