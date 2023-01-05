@@ -63,15 +63,45 @@ html(lang="en")
                         .property-item
                             .property-img 
                                 img(src=val.image)
+                                .property-img-details(class='white-color flex-around py-2')
+                                    div(class='just-flex') 
+                                        i(class="fa-solid fa-bezier-curve mx-1")
+                                        p 4300 sq ft 
+                                    div(class='just-flex') 
+                                        i(class="fa-solid fa-bed mx-1")
+                                        p 4 Beds 
+                                    div(class='just-flex') 
+                                        i(class="fa-solid fa-sink mx-1")
+                                        p 2 Baths 
                             .property-info 
-                                h4=val.desc
-                                p(class='font-color') 
-                                    i(class="fa-solid fa-location-dot") 123 Kontar St. Texas
-                            .property-footer 
-                                p $1250
-                                .footer-icons 
-                                    i(class="fa-regular fa-heart")
-                                    i(class="fa-solid fa-share-nodes")
+                                .property-desc
+                                    h4=val.desc
+                                    p(class='font-color') 
+                                        i(class="fa-solid fa-location-dot my-2")
+                                        |123 Kontar St. Texas
+                                .property-footer(class='flex-between') 
+                                    p(class='main-color') $1250
+                                    .footer-icons 
+                                        i(class="fa-regular fa-heart font-color")
+                                        i(class="fa-solid fa-share-nodes font-color")
+                .properties-choice(class=' section-padding')
+                    .p-c-title(class='text-center') 
+                        h3 WHAT ARE YOU LOOKING FOR?
+                        P(class='font-color my-3') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, facilis.
+                    - var choices = [{name:'Apartments',icon:'fa-solid fa-hotel fa-3x main-color'},{name:'Houses',icon:'fa-solid fa-house fa-3x main-color'},{name:'Garages',icon:'fa-solid fa-warehouse fa-3x main-color'},{name:'Commercial',icon:'fa-solid fa-coins fa-3x main-color'},]
+                    .p-c-content(class='just-flex my-5') 
+                        .p-c-img
+                            img(src='images/choice.jpg')
+                        .p-c-items
+                            each val in choices
+                                .item(class='just-flex') 
+                                    .icon 
+                                        i(class=val.icon)
+                                    .text 
+                                        h4=val.name 
+                                        p(class='font-color my-1') Lorem ipsum dolor sit amet consectetur adipisicing elit. #[br] Numquam a placeat magnam ullam!
+
+                
 
 
         

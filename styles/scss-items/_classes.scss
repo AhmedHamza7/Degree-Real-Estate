@@ -22,6 +22,9 @@
 .pointer {
     cursor: pointer;
 }
+.text-center{
+    text-align: center;
+}
 .white-color {
     color:white !important;
 }
@@ -48,6 +51,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.flex-around{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .just-flex{
     display: flex;
@@ -103,6 +111,7 @@
 .mx-5{
     margin-inline:25px;
 }
+
 
 // ===== page buttons style =====
 .button-style-outline{
