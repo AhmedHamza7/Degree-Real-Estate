@@ -28,6 +28,9 @@
 .white-color {
     color:white !important;
 }
+.rate-color{
+    color:#FFA500;
+}
 .main-color {
     color:$main-color;
 }
@@ -112,6 +115,13 @@
     margin-inline:25px;
 }
 
+.w-100{
+    width:100%
+}
+.card-shadow{
+    box-shadow: 1px 0px 6px $border-color, 
+    -1px 0px 1px $border-color;
+}
 
 // ===== page buttons style =====
 .button-style-outline{

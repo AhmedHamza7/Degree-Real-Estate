@@ -33,7 +33,7 @@ html(lang="en")
                             a DEGREE°
                     .nav-list 
                         ul(class='font-color') 
-                            each val in ['HOME', 'PROPERTIES','AGENTS','TESTIMONIALS','BLOG']
+                            each val in ['HOME', 'PROPERTIES','AGENTS','TESTIMONIALS','CONTACT']
                                 li(class='mx-2')
                                     a=val  
                     .nav-button 
@@ -60,7 +60,7 @@ html(lang="en")
                         .shape2
                 .properties-content
                     each val in property
-                        .property-item
+                        .property-item(class='card-shadow')
                             .property-img 
                                 img(src=val.image)
                                 .property-img-details(class='white-color flex-around py-2')
@@ -80,7 +80,7 @@ html(lang="en")
                                         i(class="fa-solid fa-location-dot my-2")
                                         |123 Kontar St. Texas
                                 .property-footer(class='flex-between') 
-                                    p(class='main-color') $1250
+                                    p(class='main-color mx-3') $1250
                                     .footer-icons 
                                         i(class="fa-regular fa-heart font-color")
                                         i(class="fa-solid fa-share-nodes font-color")
@@ -94,14 +94,112 @@ html(lang="en")
                             img(src='images/choice.jpg')
                         .p-c-items
                             each val in choices
-                                .item(class='just-flex') 
+                                .item(class='just-flex card-shadow') 
                                     .icon 
                                         i(class=val.icon)
                                     .text 
                                         h4=val.name 
                                         p(class='font-color my-1') Lorem ipsum dolor sit amet consectetur adipisicing elit. #[br] Numquam a placeat magnam ullam!
+        //- ======== AGENTS SECTION ========
+        -var agents = [{image:'images/agent-1.jpg', name:'Maria Blank', title:'Office Manager'},{image:'images/agent-2.jpg', name:'Karen Baran', title:'Support Manager'},{image:'images/agent-3.jpg', name:'Martin Smith', title:'Web Developer'},{image:'images/agent-4.jpg', name:'John Max', title:'Creative Director'}]
+        section(class='agents section-padding')
+            .container
+                .agents-title 
+                    h3(class='title') AGENTS
+                    .title-shape
+                        .shape1 
+                        .shape2
+                .agents-content(class='flex-around')
+                    each val in agents 
+                        .agent-item(class='card-shadow') 
+                            .agent-img(class='w-100') 
+                                img(src=val.image class='w-100')
+                            .agent-info(class='text-center py-3') 
+                                h5=val.name 
+                                p(class='font-color my-3')=val.title
+                                .social(class='flex-center') 
+                                    i(class="fa-brands fa-facebook font-color mx-2")
+                                    i(class="fa-brands fa-twitter font-color mx-2")
+                                    i(class="fa-brands fa-linkedin font-color mx-2")
+                                    i(class="fa-brands fa-github font-color mx-2")
+            -var counter = [{ic:'fa-solid fa-user fa-2x', count:'452',title:'Our Agents'},{ic:'fa-solid fa-clipboard-check fa-2x', count:'1204',title:'Listings For Sale'},{ic:'fa-solid fa-money-check fa-2x', count:'852',title:'Listings For Rent'},{ic:'fa-solid fa-chalkboard-user fa-2x', count:'371',title:'Computer Borkers'}]
+            .agents-counter
+                .overlay
+                    .container(class='flex-around')
+                        each val in counter
+                            .counter-item(class='just-flex') 
+                                .icon(class='mx-5 main-color flex-center') 
+                                    i(class=val.ic)
+                                .info(class='white-color') 
+                                    p=val.count 
+                                    span=val.title
+        - var testi = [{image:'images/t-1.jpg',name:'Karen Paran'},{image:'images/t-2.jpg',name:'Eline Perei'},{image:'images/t-3.jpg',name:'John Pitar'}]
+        section(class='testimonials')
+            .overlay(class='section-padding') 
+                .container 
+                    .t-title 
+                        h3(class='title white-color') TESTIMONIALS
+                        .title-shape
+                            .shape1 
+                            .shape2
+                    .t-content(class='just-flex')
+                        each val in testi 
+                            .t-item(class='text-center') 
+                                .t-img 
+                                    img(src=val.image)
+                                .t-info 
+                                    h5=val.name 
+                                    .rate(class='py-3') 
+                                        - for (x=0; x < 5; x++)
+                                            i(class='fa-solid fa-star rate-color')
+                                    p(class='font-color') Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla adipisci, quis magni alias tempora est veritatis, quasi, libero expedita vel deleniti ipsam? Debitis, quidem nisi.
+        //-========= contact section ========
+        section(class='contact section-padding'  id='Contact')
+            .container 
+                .contact-title 
+                        h3(class='title') CONTACT
+                        .title-shape
+                            .shape1 
+                            .shape2
+                div(class="contact-content")
+                    .input
+                        input(type="text" placeholder="Name" data-aos='fade-left')
+                    .input
+                        input(type="email" placeholder="Email" data-aos='fade-up')
+                    .text-area
+                        textarea( name="" id="" cols="30" rows="10" data-aos='fade-down') Message
+                    .contact-button
+                        button.button-style-solid(data-aos='fade-down') Send Message
+            </div>
+        </div>
+        //- ======== footer section =======
+        footer(class='footer section-padding')
+            .container 
+                .footer-content
+                    .footer-social(data-aos='fade-up')
+                        img(src='images/logo.svg')
+                        .social 
+                            a(href="")
+                                i(class="fa-brands fa-facebook")
+                            a(href="")
+                                i(class="fa-brands fa-twitter")
+                            a(href="")
+                                i(class="fa-brands fa-pinterest")
+                            a(href="")
+                                i(class="fa-brands fa-instagram")
+                    .footer-list(data-aos='fade-down') 
+                        ul 
+                            each val in ['About us', 'Contact','Blog']
+                                li.pointer=val
+                        ul 
+                            each val in ['Careers', 'Support','Privacy Policy']
+                                li.pointer=val
+                    .footer-copyright(data-aos='fade-left')
+                        .footer-button 
+                            button(class='pointer button-style-outline') Request Invite 
+                        .footer-copyright-text 
+                            p © Easybank. All Rights Reserved
 
-                
+        script(src="https://unpkg.com/aos@next/dist/aos.js")
+        script(src='js/script.js')
 
-
-        

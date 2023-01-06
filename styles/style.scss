@@ -9,6 +9,9 @@
 
 //====== nav style =======
 nav{
+    *{
+        transition: 0.2s all ease;
+    }
     position: fixed;
     width: 100%;
     z-index: 99;
@@ -24,6 +27,7 @@ nav{
     }
 }
 
+//====== header syle ========
 header{
     background-image: url('../images/home-bg.jpg');
     @include backgroundOptions;
@@ -61,7 +65,7 @@ header{
         }
     }
 }
-
+//====== properties style ========
 .properties{
     .properties-title{
         margin-block: 100px
@@ -72,7 +76,6 @@ header{
         gap:2rem;
         .property-item{
             width: calc((100% / 3) - 2rem);
-            box-shadow: 3px 5px 5px $border-color;
             .property-img{
                 position: relative;
                 overflow: hidden;
@@ -102,7 +105,7 @@ header{
                     width: 100%;
                     bottom:0px;
                     left: -100%;
-                    background-color: #18987eb8;
+                    background-color: #00A8FFb8;
                 }
                 &:hover{
                     img{
@@ -171,8 +174,28 @@ header{
                     column-gap:20px;
                     padding: 20px;
                     margin-bottom: 25px;
-                    box-shadow: 1px 0px 6px $border-color, 
-                                -1px 0px 1px $border-color;
+                    position: relative;
+                    overflow: hidden;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        left: 0;
+                        bottom:-100%;
+                        height: 100%;
+                        background-color: $main-color;
+                        z-index: -1;
+                        border-radius: 5px;
+                        transition: 0.6s ease all;
+                    }
+                    &:hover{
+                        &::before{
+                            bottom: 0%;
+                        }
+                        h4,i,p{
+                            color: white !important;
+                        }
+                    }
                     &:last-child{
                         margin-bottom: 0px !important;
                     }
@@ -189,3 +212,228 @@ header{
         }
     }
     }
+//======== agents style ========
+.agents{
+    .agents-title {
+        margin-bottom: 100px;
+    }
+    .agents-content{
+        .agent-item{
+            &:hover{
+                box-shadow: 1px 4px 10px $border-color, 
+                -1px -4px 5px $border-color;
+                transform: translateY(-50px);
+            }
+            img{
+                max-height: 220px;
+            }
+            h5{
+                font-size: 20px;
+                font-weight: 400;
+            }
+            i{
+                &:hover{
+                    color:$main-color;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+    .agents-counter{
+        background-image: url('../images/counter.jpg');
+        @include backgroundOptions;
+        margin-block: 100px;
+        
+        .overlay{
+            background-color: rgba(36, 36, 36, 0.618);
+            padding-block: 100px;
+            .counter-item{
+                .icon{
+                    background-color: white;
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 3px;
+                    position: relative;
+                    i{
+                        z-index: 2;
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left:0;
+                        width: 100%;
+                        background-color: $main-color;
+                        border-radius: 3px;
+                        z-index: 1;
+                        transition: 0.7s all ease;
+                    }
+                }
+                p{
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+                span{
+                    line-height: 1.9;
+                }
+
+                &:hover{
+                    .icon{
+                        border-radius: 20px;
+                        i{
+                            color:white;
+                        }
+                        &:after{
+                            height: 100%;
+                            border-radius: 19px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//======== testimonials style ======
+.testimonials{
+    background-image: url('../images/testimonials.jpg');
+    @include backgroundOptions;
+    .overlay{
+        background-color: rgba(0, 0, 0, 0.668);
+        .t-title{
+            margin-block: 100px;
+            .title {
+                &:before{
+                    background-color: transparent;
+                    border-block: 1px solid transparent;
+                }
+            }
+            .title-shape {
+                .shape1{
+                    background-color: $main-color;
+                }
+                .shape2{
+                    background-color: transparent;
+                }
+            }
+        }
+    
+        .t-content{
+            column-gap: 25px;
+            .t-item{
+                background-color: white;
+                padding: 30px;
+                border-radius: 15px;
+                position: relative;
+                &:hover{
+                    .t-img{
+                        left: 85%;
+                        transform: translateX(-85%) scale(1.2);
+                    }
+                    i{
+                        margin-inline: 7px;
+                    }
+                }
+                .t-img{
+                    position: absolute;
+                    top:-35px;
+                    left:50%;
+                    transform: translateX(-50%);
+                    img {
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                    }
+                }
+                .t-info{
+                    margin-top: 30px;
+                    h5{
+                        font-size: 22px;
+                        font-weight: 300;
+                    }
+                    p{
+                        line-height: 1.4;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*======== contact style ======*/
+.contact{
+    .container{
+        .contact-title{
+            margin-block: 100px;
+        }
+        .contact-content{
+            @include container(60%);
+            .input{
+                margin-bottom: 20px;
+                border: 2px solid $main-color;
+                input{
+                    @include inputStyle;
+                }
+            }
+            .text-area{
+                border: 2px solid $main-color;
+                margin-bottom: 40px;
+                textarea{
+                    @include inputStyle;
+                }
+            }
+    }
+}
+}
+
+/* ====== footer style ===== */
+.footer {
+    background-color: $footer-color;
+    .container{
+        .footer-content{
+            display: flex;
+            .footer-social{
+                width: 25%;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-between;
+                .social{
+                    width: 100%;
+                    i{
+                        color:white;
+                        margin-inline: 5px;
+                        &:hover{
+                            color:$main-color;
+                        }
+                    }
+                }
+            }
+            .footer-list{
+                display: flex;
+                width: 50%;
+                column-gap:20%;
+                ul {
+                    li{
+                        display: block;
+                        color: white;
+                        line-height: 40px;
+                        &:hover{
+                            color:$main-color;
+                        }
+                    }
+                }
+            }
+            .footer-copyright{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                align-content: space-between;
+                width: 25%;
+                .footer-copyright-text{
+                    color: white;
+                }
+            }
+        }
+    }
+}
