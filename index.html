@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEGREE°</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body> 
@@ -30,27 +32,29 @@
           </div>
         </div>
       </div>
+      <input type="checkbox" id="check">
+      <label class="checkbtn" for="check"><i class="fa-solid fa-bars fa-2x" id="open-nav"></i></label>
       <div class="navbar-content py-3"> 
         <div class="container flex-between">
           <div class="nav-logo"> 
-            <h1> <a>DEGREE°</a></h1>
+            <h1> <a>D<span class="main-color">EG</span>REE°</a></h1>
           </div>
-          <div class="nav-list"> 
+          <div class="nav-list" id="nav-menu"> 
             <ul class="font-color"> 
-              <li class="mx-2"><a>HOME</a></li>
-              <li class="mx-2"><a>PROPERTIES</a></li>
-              <li class="mx-2"><a>AGENTS</a></li>
-              <li class="mx-2"><a>TESTIMONIALS</a></li>
-              <li class="mx-2"><a>CONTACT</a></li>
+              <li class="mx-2"><a class="font-color" href="#HOME" data-section="HOME">HOME</a></li>
+              <li class="mx-2"><a class="font-color" href="#PROPERTIES" data-section="PROPERTIES">PROPERTIES</a></li>
+              <li class="mx-2"><a class="font-color" href="#AGENTS" data-section="AGENTS">AGENTS</a></li>
+              <li class="mx-2"><a class="font-color" href="#TESTIMONIALS" data-section="TESTIMONIALS">TESTIMONIALS</a></li>
+              <li class="mx-2"><a class="font-color" href="#CONTACT" data-section="CONTACT">CONTACT</a></li>
             </ul>
           </div>
           <div class="nav-button"> 
-            <button class="button-style-outline">Submit Property</button>
+            <button class="btn-style">Submit Property</button>
           </div>
         </div>
       </div>
     </nav>
-    <header>
+    <section class="header" id="HOME">
       <div class="overlay flex-center"> 
         <div class="container flex-center"> 
           <div class="header-content">
@@ -59,16 +63,16 @@
               <p class="my-5">Allow us to guide you through the innovative stress free approach in <br> finding your dream Properties.</p>
             </div>
             <div class="header-buttons">
-              <button class="button-style-solid">Get Started Now</button>
+              <button class="btn-style mx-3">Get Started Now</button>
               <button class="button-style-outline">Learn More</button>
             </div>
           </div>
         </div>
       </div>
-    </header>
-    <section class="properties section-padding">
+    </section>
+    <section class="properties section-padding" id="PROPERTIES">
       <div class="container"> 
-        <div class="properties-title"> 
+        <div class="properties-title" data-aos="fade-up"> 
           <h3 class="title">PROPERTIES</h3>
           <div class="title-shape">
             <div class="shape1"> </div>
@@ -76,7 +80,7 @@
           </div>
         </div>
         <div class="properties-content">
-          <div class="property-item card-shadow">
+          <div class="property-item card-shadow" data-aos="zoom-out-left">
             <div class="property-img"> <img src="images/property-1.jpg">
               <div class="property-img-details white-color flex-around py-2">
                 <div class="just-flex"> <i class="fa-solid fa-bezier-curve mx-1"></i>
@@ -101,7 +105,7 @@
               </div>
             </div>
           </div>
-          <div class="property-item card-shadow">
+          <div class="property-item card-shadow" data-aos="zoom-out-left">
             <div class="property-img"> <img src="images/property-2.jpg">
               <div class="property-img-details white-color flex-around py-2">
                 <div class="just-flex"> <i class="fa-solid fa-bezier-curve mx-1"></i>
@@ -126,7 +130,7 @@
               </div>
             </div>
           </div>
-          <div class="property-item card-shadow">
+          <div class="property-item card-shadow" data-aos="zoom-out-left">
             <div class="property-img"> <img src="images/property-3.jpg">
               <div class="property-img-details white-color flex-around py-2">
                 <div class="just-flex"> <i class="fa-solid fa-bezier-curve mx-1"></i>
@@ -151,7 +155,7 @@
               </div>
             </div>
           </div>
-          <div class="property-item card-shadow">
+          <div class="property-item card-shadow" data-aos="zoom-out-left">
             <div class="property-img"> <img src="images/property-4.jpg">
               <div class="property-img-details white-color flex-around py-2">
                 <div class="just-flex"> <i class="fa-solid fa-bezier-curve mx-1"></i>
@@ -176,7 +180,7 @@
               </div>
             </div>
           </div>
-          <div class="property-item card-shadow">
+          <div class="property-item card-shadow" data-aos="zoom-out-left">
             <div class="property-img"> <img src="images/property-5.jpg">
               <div class="property-img-details white-color flex-around py-2">
                 <div class="just-flex"> <i class="fa-solid fa-bezier-curve mx-1"></i>
@@ -201,7 +205,7 @@
               </div>
             </div>
           </div>
-          <div class="property-item card-shadow">
+          <div class="property-item card-shadow" data-aos="zoom-out-left">
             <div class="property-img"> <img src="images/property-6.jpg">
               <div class="property-img-details white-color flex-around py-2">
                 <div class="just-flex"> <i class="fa-solid fa-bezier-curve mx-1"></i>
@@ -228,35 +232,35 @@
           </div>
         </div>
         <div class="properties-choice  section-padding">
-          <div class="p-c-title text-center"> 
+          <div class="p-c-title text-center" data-aos="fade-down"> 
             <h3>WHAT ARE YOU LOOKING FOR?</h3>
             <P class="font-color my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, facilis.</P>
           </div>
           <div class="p-c-content just-flex my-5"> 
-            <div class="p-c-img"><img src="images/choice.jpg"></div>
+            <div class="p-c-img" data-aos="flip-left"><img src="images/choice.jpg"></div>
             <div class="p-c-items">
-              <div class="item just-flex card-shadow"> 
+              <div class="item just-flex card-shadow" data-aos="fade-left"> 
                 <div class="icon"> <i class="fa-solid fa-hotel fa-3x main-color"></i></div>
                 <div class="text"> 
                   <h4>Apartments</h4>
                   <p class="font-color my-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Numquam a placeat magnam ullam!</p>
                 </div>
               </div>
-              <div class="item just-flex card-shadow"> 
+              <div class="item just-flex card-shadow" data-aos="fade-left"> 
                 <div class="icon"> <i class="fa-solid fa-house fa-3x main-color"></i></div>
                 <div class="text"> 
                   <h4>Houses</h4>
                   <p class="font-color my-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Numquam a placeat magnam ullam!</p>
                 </div>
               </div>
-              <div class="item just-flex card-shadow"> 
+              <div class="item just-flex card-shadow" data-aos="fade-left"> 
                 <div class="icon"> <i class="fa-solid fa-warehouse fa-3x main-color"></i></div>
                 <div class="text"> 
                   <h4>Garages</h4>
                   <p class="font-color my-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Numquam a placeat magnam ullam!</p>
                 </div>
               </div>
-              <div class="item just-flex card-shadow"> 
+              <div class="item just-flex card-shadow" data-aos="fade-left"> 
                 <div class="icon"> <i class="fa-solid fa-coins fa-3x main-color"></i></div>
                 <div class="text"> 
                   <h4>Commercial</h4>
@@ -268,9 +272,9 @@
         </div>
       </div>
     </section>
-    <section class="agents section-padding">
+    <section class="agents section-padding" id="AGENTS">
       <div class="container">
-        <div class="agents-title"> 
+        <div class="agents-title" data-aos="fade-right"> 
           <h3 class="title">AGENTS</h3>
           <div class="title-shape">
             <div class="shape1"> </div>
@@ -278,7 +282,7 @@
           </div>
         </div>
         <div class="agents-content flex-around">
-          <div class="agent-item card-shadow"> 
+          <div class="agent-item card-shadow" data-aos="flip-right"> 
             <div class="agent-img w-100"> <img class="w-100" src="images/agent-1.jpg"></div>
             <div class="agent-info text-center py-3"> 
               <h5>Maria Blank</h5>
@@ -286,7 +290,7 @@
               <div class="social flex-center"> <i class="fa-brands fa-facebook font-color mx-2"></i><i class="fa-brands fa-twitter font-color mx-2"></i><i class="fa-brands fa-linkedin font-color mx-2"></i><i class="fa-brands fa-github font-color mx-2"></i></div>
             </div>
           </div>
-          <div class="agent-item card-shadow"> 
+          <div class="agent-item card-shadow" data-aos="flip-right"> 
             <div class="agent-img w-100"> <img class="w-100" src="images/agent-2.jpg"></div>
             <div class="agent-info text-center py-3"> 
               <h5>Karen Baran</h5>
@@ -294,7 +298,7 @@
               <div class="social flex-center"> <i class="fa-brands fa-facebook font-color mx-2"></i><i class="fa-brands fa-twitter font-color mx-2"></i><i class="fa-brands fa-linkedin font-color mx-2"></i><i class="fa-brands fa-github font-color mx-2"></i></div>
             </div>
           </div>
-          <div class="agent-item card-shadow"> 
+          <div class="agent-item card-shadow" data-aos="flip-right"> 
             <div class="agent-img w-100"> <img class="w-100" src="images/agent-3.jpg"></div>
             <div class="agent-info text-center py-3"> 
               <h5>Martin Smith</h5>
@@ -302,7 +306,7 @@
               <div class="social flex-center"> <i class="fa-brands fa-facebook font-color mx-2"></i><i class="fa-brands fa-twitter font-color mx-2"></i><i class="fa-brands fa-linkedin font-color mx-2"></i><i class="fa-brands fa-github font-color mx-2"></i></div>
             </div>
           </div>
-          <div class="agent-item card-shadow"> 
+          <div class="agent-item card-shadow" data-aos="flip-right"> 
             <div class="agent-img w-100"> <img class="w-100" src="images/agent-4.jpg"></div>
             <div class="agent-info text-center py-3"> 
               <h5>John Max</h5>
@@ -315,25 +319,25 @@
       <div class="agents-counter">
         <div class="overlay">
           <div class="container flex-around">
-            <div class="counter-item just-flex"> 
+            <div class="counter-item just-flex" data-aos="fade-up-right"> 
               <div class="icon mx-5 main-color flex-center"> <i class="fa-solid fa-user fa-2x"></i></div>
               <div class="info white-color"> 
                 <p>452</p><span>Our Agents</span>
               </div>
             </div>
-            <div class="counter-item just-flex"> 
+            <div class="counter-item just-flex" data-aos="fade-up-right"> 
               <div class="icon mx-5 main-color flex-center"> <i class="fa-solid fa-clipboard-check fa-2x"></i></div>
               <div class="info white-color"> 
                 <p>1204</p><span>Listings For Sale</span>
               </div>
             </div>
-            <div class="counter-item just-flex"> 
+            <div class="counter-item just-flex" data-aos="fade-up-right"> 
               <div class="icon mx-5 main-color flex-center"> <i class="fa-solid fa-money-check fa-2x"></i></div>
               <div class="info white-color"> 
                 <p>852</p><span>Listings For Rent</span>
               </div>
             </div>
-            <div class="counter-item just-flex"> 
+            <div class="counter-item just-flex" data-aos="fade-up-right"> 
               <div class="icon mx-5 main-color flex-center"> <i class="fa-solid fa-chalkboard-user fa-2x"></i></div>
               <div class="info white-color"> 
                 <p>371</p><span>Computer Borkers</span>
@@ -343,7 +347,7 @@
         </div>
       </div>
     </section>
-    <section class="testimonials">
+    <section class="testimonials" id="TESTIMONIALS">
       <div class="overlay section-padding"> 
         <div class="container"> 
           <div class="t-title"> 
@@ -354,7 +358,7 @@
             </div>
           </div>
           <div class="t-content just-flex">
-            <div class="t-item text-center"> 
+            <div class="t-item text-center" data-aos="fade-down-left"> 
               <div class="t-img"> <img src="images/t-1.jpg"></div>
               <div class="t-info"> 
                 <h5>Karen Paran</h5>
@@ -363,7 +367,7 @@
                 <p class="font-color">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla adipisci, quis magni alias tempora est veritatis, quasi, libero expedita vel deleniti ipsam? Debitis, quidem nisi.</p>
               </div>
             </div>
-            <div class="t-item text-center"> 
+            <div class="t-item text-center" data-aos="fade-down-left"> 
               <div class="t-img"> <img src="images/t-2.jpg"></div>
               <div class="t-info"> 
                 <h5>Eline Perei</h5>
@@ -372,7 +376,7 @@
                 <p class="font-color">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla adipisci, quis magni alias tempora est veritatis, quasi, libero expedita vel deleniti ipsam? Debitis, quidem nisi.</p>
               </div>
             </div>
-            <div class="t-item text-center"> 
+            <div class="t-item text-center" data-aos="fade-down-left"> 
               <div class="t-img"> <img src="images/t-3.jpg"></div>
               <div class="t-info"> 
                 <h5>John Pitar</h5>
@@ -385,7 +389,7 @@
         </div>
       </div>
     </section>
-    <section class="contact section-padding" id="Contact">
+    <section class="contact section-padding" id="CONTACT">
       <div class="container"> 
         <div class="contact-title"> 
           <h3 class="title">CONTACT</h3>
@@ -395,17 +399,17 @@
           </div>
         </div>
         <div class="contact-content">
-          <div class="input">
+          <div class="input" data-aos="fade-right">
             <input type="text" placeholder="Name" data-aos="fade-left">
           </div>
-          <div class="input">
+          <div class="input" data-aos="fade-down">
             <input type="email" placeholder="Email" data-aos="fade-up">
           </div>
-          <div class="text-area">
+          <div class="text-area" data-aos="fade-up">
             <textarea name="" id="" cols="30" rows="10" data-aos="fade-down">Message</textarea>
           </div>
           <div class="contact-button">
-            <button class="button-style-solid" data-aos="fade-down">Send Message</button>
+            <button class="btn-style" data-aos="fade-down">Send Message</button>
           </div>
         </div>
       </div></div>
@@ -413,7 +417,8 @@
     <footer class="footer section-padding">
       <div class="container"> 
         <div class="footer-content">
-          <div class="footer-social" data-aos="fade-up"><img src="images/logo.svg">
+          <div class="footer-social" data-aos="fade-up">
+            <h1 class="white-color"> <a>D<span class="main-color">EG</span>REE°</a></h1>
             <div class="social"> <a href=""><i class="fa-brands fa-facebook"></i></a><a href=""><i class="fa-brands fa-twitter"></i></a><a href=""><i class="fa-brands fa-pinterest"></i></a><a href=""><i class="fa-brands fa-instagram"></i></a></div>
           </div>
           <div class="footer-list" data-aos="fade-down"> 
@@ -421,19 +426,21 @@
               <li class="pointer">About us</li>
               <li class="pointer">Contact</li>
               <li class="pointer">Blog</li>
+              <li class="pointer">Privacy Policy</li>
             </ul>
             <ul> 
-              <li class="pointer">Careers</li>
-              <li class="pointer">Support</li>
-              <li class="pointer">Privacy Policy</li>
+              <li class="pointer">Apartment</li>
+              <li class="pointer">Restaurant</li>
+              <li class="pointer">My Houses</li>
+              <li class="pointer">Family House</li>
             </ul>
           </div>
           <div class="footer-copyright" data-aos="fade-left">
             <div class="footer-button"> 
-              <button class="pointer button-style-outline">Request Invite </button>
+              <button class="pointer btn-style">Request Invite </button>
             </div>
             <div class="footer-copyright-text"> 
-              <p>© Easybank. All Rights Reserved</p>
+              <p>© DEGREE. All Rights Reserved</p>
             </div>
           </div>
         </div>

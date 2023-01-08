@@ -5,7 +5,9 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title DEGREE°
+        link(rel="shortcut icon", href="images/favicon.ico", type="image/x-icon")
         link(rel="stylesheet", href="styles/all.min.css")
+        link(rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
         link(rel="stylesheet", href="styles/style.css")
     body 
         //-====== NAV SECTION =======
@@ -26,20 +28,23 @@ html(lang="en")
                         div(class='just-flex') 
                             i(class="fa-solid fa-user")
                             p(class='mx-1') Register
+            input(type="checkbox" id="check")
+            label(for="check" class="checkbtn")
+                i(class='fa-solid fa-bars fa-2x' id='open-nav')
             .navbar-content(class='py-3') 
                 .container(class='flex-between')
                     .nav-logo 
                         h1 
-                            a DEGREE°
-                    .nav-list 
+                            a D#[span.main-color EG]REE°
+                    .nav-list(id='nav-menu') 
                         ul(class='font-color') 
                             each val in ['HOME', 'PROPERTIES','AGENTS','TESTIMONIALS','CONTACT']
                                 li(class='mx-2')
-                                    a=val  
+                                    a(href='#'+val data-section=val class='font-color')=val  
                     .nav-button 
-                        button(class='button-style-outline') Submit Property
+                        button(class='btn-style') Submit Property
         //-====== HEADER SECTION =======
-        header
+        section(class='header' id='HOME')
             .overlay(class='flex-center') 
                 .container(class='flex-center') 
                     .header-content
@@ -47,20 +52,20 @@ html(lang="en")
                             h2 BEST PLACE TO FIND HOME
                             p(class='my-5') Allow us to guide you through the innovative stress free approach in #[br] finding your dream Properties.
                         .header-buttons
-                            button(class='button-style-solid') Get Started Now
+                            button(class='btn-style mx-3') Get Started Now
                             button(class='button-style-outline') Learn More
         //-====== PROPERTIES SECTION =======
         - var property = [{desc:'Big Head House', image:'images/property-1.jpg'},{desc:'Masons Villa', image:'images/property-2.jpg'},{desc:'Beautiful Single Home', image:'images/property-3.jpg'},{desc:'Park Avenue', image:'images/property-4.jpg'},{desc:'Luxury House', image:'images/property-5.jpg'},{desc:'Big Head House', image:'images/property-6.jpg'}]
-        section(class='properties section-padding')
+        section(id='PROPERTIES' class='properties section-padding')
             .container 
-                .properties-title 
+                .properties-title(data-aos='fade-up') 
                     h3(class='title') PROPERTIES
                     .title-shape
                         .shape1 
                         .shape2
                 .properties-content
                     each val in property
-                        .property-item(class='card-shadow')
+                        .property-item(class='card-shadow' data-aos='zoom-out-left')
                             .property-img 
                                 img(src=val.image)
                                 .property-img-details(class='white-color flex-around py-2')
@@ -85,16 +90,16 @@ html(lang="en")
                                         i(class="fa-regular fa-heart font-color")
                                         i(class="fa-solid fa-share-nodes font-color")
                 .properties-choice(class=' section-padding')
-                    .p-c-title(class='text-center') 
+                    .p-c-title(class='text-center' data-aos='fade-down') 
                         h3 WHAT ARE YOU LOOKING FOR?
                         P(class='font-color my-3') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, facilis.
                     - var choices = [{name:'Apartments',icon:'fa-solid fa-hotel fa-3x main-color'},{name:'Houses',icon:'fa-solid fa-house fa-3x main-color'},{name:'Garages',icon:'fa-solid fa-warehouse fa-3x main-color'},{name:'Commercial',icon:'fa-solid fa-coins fa-3x main-color'},]
                     .p-c-content(class='just-flex my-5') 
-                        .p-c-img
+                        .p-c-img(data-aos='flip-left')
                             img(src='images/choice.jpg')
                         .p-c-items
                             each val in choices
-                                .item(class='just-flex card-shadow') 
+                                .item(class='just-flex card-shadow' data-aos='fade-left') 
                                     .icon 
                                         i(class=val.icon)
                                     .text 
@@ -102,16 +107,16 @@ html(lang="en")
                                         p(class='font-color my-1') Lorem ipsum dolor sit amet consectetur adipisicing elit. #[br] Numquam a placeat magnam ullam!
         //- ======== AGENTS SECTION ========
         -var agents = [{image:'images/agent-1.jpg', name:'Maria Blank', title:'Office Manager'},{image:'images/agent-2.jpg', name:'Karen Baran', title:'Support Manager'},{image:'images/agent-3.jpg', name:'Martin Smith', title:'Web Developer'},{image:'images/agent-4.jpg', name:'John Max', title:'Creative Director'}]
-        section(class='agents section-padding')
+        section(id='AGENTS' class='agents section-padding')
             .container
-                .agents-title 
+                .agents-title(data-aos='fade-right') 
                     h3(class='title') AGENTS
                     .title-shape
                         .shape1 
                         .shape2
                 .agents-content(class='flex-around')
                     each val in agents 
-                        .agent-item(class='card-shadow') 
+                        .agent-item(class='card-shadow' data-aos='flip-right') 
                             .agent-img(class='w-100') 
                                 img(src=val.image class='w-100')
                             .agent-info(class='text-center py-3') 
@@ -127,14 +132,14 @@ html(lang="en")
                 .overlay
                     .container(class='flex-around')
                         each val in counter
-                            .counter-item(class='just-flex') 
+                            .counter-item(class='just-flex' data-aos='fade-up-right') 
                                 .icon(class='mx-5 main-color flex-center') 
                                     i(class=val.ic)
                                 .info(class='white-color') 
                                     p=val.count 
                                     span=val.title
         - var testi = [{image:'images/t-1.jpg',name:'Karen Paran'},{image:'images/t-2.jpg',name:'Eline Perei'},{image:'images/t-3.jpg',name:'John Pitar'}]
-        section(class='testimonials')
+        section(id='TESTIMONIALS' class='testimonials')
             .overlay(class='section-padding') 
                 .container 
                     .t-title 
@@ -144,7 +149,7 @@ html(lang="en")
                             .shape2
                     .t-content(class='just-flex')
                         each val in testi 
-                            .t-item(class='text-center') 
+                            .t-item(class='text-center' data-aos='fade-down-left') 
                                 .t-img 
                                     img(src=val.image)
                                 .t-info 
@@ -154,7 +159,7 @@ html(lang="en")
                                             i(class='fa-solid fa-star rate-color')
                                     p(class='font-color') Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla adipisci, quis magni alias tempora est veritatis, quasi, libero expedita vel deleniti ipsam? Debitis, quidem nisi.
         //-========= contact section ========
-        section(class='contact section-padding'  id='Contact')
+        section(id='CONTACT' class='contact section-padding')
             .container 
                 .contact-title 
                         h3(class='title') CONTACT
@@ -162,14 +167,14 @@ html(lang="en")
                             .shape1 
                             .shape2
                 div(class="contact-content")
-                    .input
+                    .input(data-aos='fade-right')
                         input(type="text" placeholder="Name" data-aos='fade-left')
-                    .input
+                    .input(data-aos='fade-down')
                         input(type="email" placeholder="Email" data-aos='fade-up')
-                    .text-area
+                    .text-area(data-aos='fade-up')
                         textarea( name="" id="" cols="30" rows="10" data-aos='fade-down') Message
                     .contact-button
-                        button.button-style-solid(data-aos='fade-down') Send Message
+                        button.btn-style(data-aos='fade-down') Send Message
             </div>
         </div>
         //- ======== footer section =======
@@ -177,7 +182,8 @@ html(lang="en")
             .container 
                 .footer-content
                     .footer-social(data-aos='fade-up')
-                        img(src='images/logo.svg')
+                        h1.white-color 
+                            a D#[span.main-color EG]REE°
                         .social 
                             a(href="")
                                 i(class="fa-brands fa-facebook")
@@ -189,16 +195,16 @@ html(lang="en")
                                 i(class="fa-brands fa-instagram")
                     .footer-list(data-aos='fade-down') 
                         ul 
-                            each val in ['About us', 'Contact','Blog']
+                            each val in ['About us', 'Contact','Blog','Privacy Policy']
                                 li.pointer=val
                         ul 
-                            each val in ['Careers', 'Support','Privacy Policy']
+                            each val in ['Apartment', 'Restaurant','My Houses','Family House']
                                 li.pointer=val
                     .footer-copyright(data-aos='fade-left')
                         .footer-button 
-                            button(class='pointer button-style-outline') Request Invite 
+                            button(class='pointer btn-style') Request Invite 
                         .footer-copyright-text 
-                            p © Easybank. All Rights Reserved
+                            p © DEGREE. All Rights Reserved
 
         script(src="https://unpkg.com/aos@next/dist/aos.js")
         script(src='js/script.js')

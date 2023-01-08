@@ -1,0 +1,127 @@
+@use 'vars.scss' as *;
+
+
+.container {
+    width:80%;
+    margin: auto;
+// make it responsive 
+    @media (max-width:992px){
+            width: 90% !important;
+    }
+    @media (max-width:768px){
+        width: 95% !important;
+    }
+}
+
+.section-padding {
+    padding-block: 60px;
+/*==== make it responsive in mobile app ======*/
+    @media (max-width:768px){
+        padding-block: 30px;
+    }
+}
+.pointer {
+    cursor: pointer;
+}
+.text-center{
+    text-align: center;
+}
+
+/* ===== COLORS =====*/
+.white-color {
+    color:white !important;
+}
+.rate-color{
+    color:#FFA500;
+}
+.main-color {
+    color:$main-color;
+}
+.font-color {
+    color:$font-color;
+}
+.border-color {
+    color:$border-color;
+}
+.main-bg{
+    background-color: $main-color;
+}
+
+//===== flexability=====
+.flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-around{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.just-flex{
+    display: flex;
+    align-items: center;
+}
+.wrap{
+    flex-wrap: wrap;
+}
+
+//====== Margin =======
+.my-1{
+    margin-block:5px;
+}
+.my-2{
+    margin-block:10px;
+}
+.my-3{
+    margin-block:15px;
+}
+.my-4{
+    margin-block:20px;
+}
+.my-5{
+    margin-block:25px;
+}
+.mx-1{
+    margin-inline:5px;
+}
+.mx-2{
+    margin-inline:10px;
+}
+.mx-3{
+    margin-inline:15px;
+}
+.mx-4{
+    margin-inline:20px;
+}
+.mx-5{
+    margin-inline:25px;
+}
+//====== Padding =======
+.py-1{
+    padding-block:5px;
+}
+.py-2{
+    padding-block:10px;
+}
+.py-3{
+    padding-block:15px;
+}
+.py-4{
+    padding-block:20px;
+}
+.py-5{
+    padding-block:25px;
+}
+
+/*====== WIDTHS =====*/
+.w-100{
+    width:100%
+}
+
+
