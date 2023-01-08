@@ -352,7 +352,7 @@ nav #check, nav .checkbtn {
   nav .checkbtn {
     display: inline-block;
     position: absolute;
-    right: 50px;
+    right: 25px;
     top: 10px;
     cursor: pointer;
     z-index: 3;
